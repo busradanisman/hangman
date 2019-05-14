@@ -23,7 +23,6 @@ namespace Adam_Asmaca
         public char[] hatalar = new char[6];
         public int index = 0;
 
-
         // Tahmin edilecek olan kelimeyi form objesine ekle
         public string tahminEdilecek = "";
         // Boş bir karakter dizisini form objesine ekle
@@ -35,7 +34,6 @@ namespace Adam_Asmaca
         /*
             Form1 load olduğunda tahminedilecek string formdan çekilir.
             Tahmin edilmişin tipini tanıplayıp tahmin edileceğin uzunluğu kadar karakter dizesi açılır.
-            Döngü oluşurup integer değerinde +
         */
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -61,7 +59,6 @@ namespace Adam_Asmaca
             string tahminEdilecek = this.tahminEdilecek;
             // string tahminEdilecek = "Demo";
 
-
             char[] tahminEdilmis = this.tahminEdilmis;
             // char[] tahminEdilmis = "****";
             Boolean match = false;
@@ -78,8 +75,6 @@ namespace Adam_Asmaca
                 }
             }
 
-            
-            // Eğer girilen karakter,
             // Elimizdeki yazı ile eşleşmiyor ise.
             if (!match)
             {
@@ -124,7 +119,6 @@ namespace Adam_Asmaca
             timerLabel.Text = "60";
             timer.Stop();
 
-            // picture.Image = Image.FromFile(@"C:\hang\1.png");
             // tahmin edilecek olanı random olarak seç.
             Random random = new Random();
             int index = random.Next(0, this.tahminEdilecekler.Length);
@@ -156,7 +150,6 @@ namespace Adam_Asmaca
         {
             this.gameStarted = true;
             // zamanlayıcıyı başlat.
-            // ....
             timerLabel.Text = "60";
             timer.Start();
             picture.Image = Image.FromFile(@"C:\hang\-.png".Replace('-', '0'));
@@ -182,13 +175,3 @@ namespace Adam_Asmaca
         }
     }
 }
-
-
-
-
-
-
-/*private void button1_Click(object sender, EventArgs e)
-{
-    pictureBox1.Image = Image.FromFile('C:\hang\2.png');
-} */ 
