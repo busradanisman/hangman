@@ -18,8 +18,8 @@ namespace Adam_Asmaca
             InitializeComponent();
         }
 
-        public string[] tahminEdilecekler = new string[] { "televizyon", "araba", "uçak" };
-        public string[] ipucu = new string[] { "dizi izleriz", "bir ulaşım aracı", "kuşlara benzer" };
+        public string[] tahminEdilecekler = new string[] { "televizyon", "araba", "uçak", "kuş", "cüzdan", "ayakkabı", "toka"};
+        public string[] ipucu = new string[] { "dizi izleriz", "bir ulaşım aracı", "kuşlara benzer","uçar","cebimizde taşırız","dışarı çıkınca giyeriz","bir takı"};
         public char[] hatalar = new char[6];
         public int index = 0;
 
@@ -95,6 +95,13 @@ namespace Adam_Asmaca
                 selectRandomQuestion();
                 return;
             }
+
+            if (this.error == 6 && !match)
+            {
+                selectRandomQuestion();
+                this.gameStarted = false;
+                MessageBox.Show("Oyunu kaybettin, üzülme tekrar dene!");
+            }
         }
 
         private void catchError()
@@ -106,7 +113,7 @@ namespace Adam_Asmaca
                 // oyun bitti olarak set et.
                 gameStarted = false;
                 selectRandomQuestion();
-                return;
+                picture.Image = Image.FromFile(@"C:\hang\-.png".Replace('-', '6'));
             }
             // this.error sınıf değişkenini stringe çevir.
             string error = this.error.ToString();
@@ -117,6 +124,7 @@ namespace Adam_Asmaca
         private void selectRandomQuestion()
         {
             timerLabel.Text = "60";
+            // Oyun tekrar başladığında önceki zamanlayıcıyı durduralım.
             timer.Stop();
 
             // tahmin edilecek olanı random olarak seç.
@@ -124,15 +132,17 @@ namespace Adam_Asmaca
             int index = random.Next(0, this.tahminEdilecekler.Length);
             Console.Write(tahminEdilecekler[index]);
 
-            this.tahminEdilecek = tahminEdilecekler[index];
             this.index = index;
 
+            // ipucu laberını göster
             hint.Text = this.ipucu[this.index];
+            this.tahminEdilecek = tahminEdilecekler[this.index];
+
 
             string tahminEdilecek = this.tahminEdilecek;
 
-            char[] tahminEdilmis = new char[tahminEdilecek.Length];
-            for (int i = 0; i < tahminEdilecek.Length; i++)
+            char[] tahminEdilmis = new char[this.tahminEdilecek.Length];
+            for (int i = 0; i < this.tahminEdilecek.Length; i++)
             {
                 tahminEdilmis[i] = '*';
             }
