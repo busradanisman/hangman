@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +39,7 @@ namespace Adam_Asmaca
         private void Form1_Load(object sender, EventArgs e)
         {
             this.selectRandomQuestion();
+            
         }
 
         private void kontrol_Click(object sender, EventArgs e)
@@ -113,12 +115,14 @@ namespace Adam_Asmaca
                 // oyun bitti olarak set et.
                 gameStarted = false;
                 selectRandomQuestion();
-                picture.Image = Image.FromFile(@"C:\hang\-.png".Replace('-', '6'));
+                
+                picture.Image = Image.FromFile(string.Concat(Directory.GetCurrentDirectory(), @"\images\-.png".Replace('-', '6')));
             }
             // this.error sınıf değişkenini stringe çevir.
             string error = this.error.ToString();
             // - karakterini hata sayısı ile değiştir.
-            picture.Image = Image.FromFile(@"C:\hang\-.png".Replace('-', error[0]));
+            
+            picture.Image = Image.FromFile(string.Concat(Directory.GetCurrentDirectory(), @"\images\-.png".Replace('-', error[0])));
         }
 
         private void selectRandomQuestion()
@@ -134,7 +138,7 @@ namespace Adam_Asmaca
 
             this.index = index;
 
-            // ipucu laberını göster
+            // ipucu labelını göster
             hint.Text = this.ipucu[this.index];
             this.tahminEdilecek = tahminEdilecekler[this.index];
 
@@ -162,7 +166,8 @@ namespace Adam_Asmaca
             // zamanlayıcıyı başlat.
             timerLabel.Text = "60";
             timer.Start();
-            picture.Image = Image.FromFile(@"C:\hang\-.png".Replace('-', '0'));
+            
+            picture.Image = Image.FromFile(string.Concat(Directory.GetCurrentDirectory(), @"\images\-.png".Replace('-', '0')));
         }
 
         private void timer_Tick(object sender, EventArgs e)

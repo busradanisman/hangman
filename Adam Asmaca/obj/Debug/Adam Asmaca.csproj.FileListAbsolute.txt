@@ -1,7 +1,6 @@
 C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\bin\Debug\Adam Asmaca.exe.config
 C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\bin\Debug\Adam Asmaca.exe
 C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\bin\Debug\Adam Asmaca.pdb
-C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\obj\Debug\Adam Asmaca.csprojAssemblyReference.cache
 C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\obj\Debug\Adam_Asmaca.Form1.resources
 C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\obj\Debug\Adam_Asmaca.Properties.Resources.resources
 C:\Users\BÜŞRA\source\repos\Adam Asmaca\Adam Asmaca\obj\Debug\Adam Asmaca.csproj.GenerateResource.cache
